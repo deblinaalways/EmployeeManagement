@@ -26,11 +26,13 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
     private var model = EmployeeModel()
     private var employeeModel: EmployeeViewModel!
     var imageSelected = false
+    private var completion: ((_ model: EmployeeViewModel) -> Void)?
     
     // MARK: Factory Method
-    class func viewController(employeeModel: EmployeeViewModel? = nil) -> AddNewEmployeeTableViewController {
+    class func viewController(employeeModel: EmployeeViewModel? = nil, completion: ((_ model: EmployeeViewModel) -> Void)? = nil) -> AddNewEmployeeTableViewController {
         let vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateViewController(withIdentifier: "AddNewEmployeeTableViewController") as! AddNewEmployeeTableViewController
         vc.employeeModel = employeeModel
+        vc.completion = completion
         return vc
     }
     
@@ -46,6 +48,7 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
         gender.inputAccessoryView = toolBar
         if employeeModel != nil {
             //To be Edited
+            imageSelected = true
             pasteEmployeeData()
         }
     }
@@ -151,6 +154,7 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
                 let existingEmployeeModel = EmployeeModel(id: employeeModel.id)
                 if existingEmployeeModel.employee != nil {
                     saveToCoreData(with: existingEmployeeModel)
+                    completion!(EmployeeViewModel(employee: existingEmployeeModel.employee))
                 }
             }
             self.navigationController?.popViewController(animated: true)
@@ -172,24 +176,19 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
     }
     
     private func saveToCoreData(with model: EmployeeModel) {
-        var searchText = [""]
+        //var searchText = [""]
         model.employee.name = name.text
-        searchText.append(name.text!.lowercased())
         guard let imageData = UIImageJPEGRepresentation(employeeImageView.image!, 1) else {
             print("Error in saving image")
             return
         }
         model.employee.image = imageData as NSData
         if designation.text != nil { model.employee.designation = designation.text }
-        searchText.append(designation.text!.lowercased())
         model.employee.dob = selectedDate! as NSDate
-        searchText.append((selectedDate!).dateInYYYYMMDDFormat())
         if address.text != nil {
             model.employee.address = address.text
-            searchText.append(address.text!.lowercased())
         }
         model.employee.gender = gender.text
-        searchText.append(gender.text!)
         if hobbyList.text != nil {
             var hobbyComponents = hobbyList.text?.components(separatedBy: .whitespaces)
             for (index, hobby) in (hobbyComponents?.enumerated())! {
@@ -200,9 +199,10 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
             model.employee.hobbies = hobbyComponents! as NSObject
             var hobbies = [String]()
             hobbyComponents?.forEach { hobbies.append($0.lowercased()) }
-            searchText.append(contentsOf: hobbies)
         }
-        model.employee.searchText = searchText as NSObject
+        var searchText = name.text!.lowercased() + " " + (selectedDate!).dateInYYYYMMDDFormat() + " " + designation.text!.lowercased() + " " + address.text!.lowercased() + " " + gender.text!.lowercased() + " " + hobbyList.text!.lowercased()
+        
+        model.employee.searchText = searchText
         print(model.employee)
         try! model.employee.managedObjectContext?.save()
     }

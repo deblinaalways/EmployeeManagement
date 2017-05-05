@@ -78,7 +78,7 @@ extension NSManagedObject {
         }
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = delegate
-        try? fetchedResultsController.performFetch()
+        try! fetchedResultsController.performFetch()
         return fetchedResultsController
     }
     

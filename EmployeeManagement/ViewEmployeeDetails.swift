@@ -25,10 +25,12 @@ class ViewEmployeeDetails: UITableViewController {
         return vc
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.tableView.reloadData()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        syncEmployeeData()
+    }
+    
+    private func syncEmployeeData() {
         employeeImageView.image = model.image
         name.text = model.name
         dob.text = model.dobString
@@ -41,10 +43,17 @@ class ViewEmployeeDetails: UITableViewController {
             }
             hobbies.text = text
         }
+        self.tableView.reloadData()
     }
     
     @IBAction func editEmployeeDetailsButtonTapped(_ sender: UIBarButtonItem) {
-        self.navigationController?.pushViewController(AddNewEmployeeTableViewController.viewController(employeeModel: model), animated: true)
+        let editEmployeeProfileController = AddNewEmployeeTableViewController.viewController(employeeModel: model) { (model) in
+            DispatchQueue.main.async {
+                self.model = model
+                self.syncEmployeeData()
+            }
+        }
+        self.navigationController?.pushViewController(editEmployeeProfileController, animated: true)
     }
     
 }

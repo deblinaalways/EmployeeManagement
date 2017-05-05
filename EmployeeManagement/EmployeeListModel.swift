@@ -17,7 +17,7 @@ enum FetchOrder {
     case Dob
 }
 
-class EmployeeListModel: NSObject {
+class EmployeeListModel: NSObject, NSFetchedResultsControllerDelegate {
     
     private(set) var employeeList: NSFetchedResultsController<NSFetchRequestResult>!
     var managedObjectContext = ManagedObjectContext.managedObjectContext()
@@ -48,7 +48,11 @@ class EmployeeListModel: NSObject {
     }
     
     func fetchEmployees(By searchText: String) {
-        employeeList = Employee.fetchedResultsController(managedObjectContext, sortKeys: ["updateTime"], predicate: NSPredicate(format: "%@ IN searchText", searchText.lowercased()))
+        employeeList = Employee.fetchedResultsController(managedObjectContext, sortKeys: ["updateTime"], predicate: NSPredicate(format: "searchText CONTAINS[c] %@", searchText.lowercased()), delegate: self)
+        
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         
     }
 }

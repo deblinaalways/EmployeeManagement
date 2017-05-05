@@ -23,14 +23,11 @@ class EmployeeViewModel {
     var name: String              { return employee.name! }
     var gender: String            { return employee.gender! }
     var image: UIImage            { return UIImage(data: employee.image! as Data)! }
-    var searchText: [String]        {
-        var searchtext = [""]
-        searchtext.append(name)
-        searchtext.append(gender)
-        searchtext.append(address)
-        searchtext.append(designation)
-        searchtext.append(dobString)
-        searchtext.append(contentsOf: hobbies)
+    var searchText: String        {
+        var searchtext = name + " " + gender + " " + address + " " + designation + " " + dobString
+        hobbies.forEach {
+            searchtext = searchtext + " " + $0
+        }
         return searchtext
     }
     
