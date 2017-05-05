@@ -49,10 +49,10 @@ class EmployeeListModel: NSObject, NSFetchedResultsControllerDelegate {
     
     func fetchEmployees(By searchText: String) {
         employeeList = Employee.fetchedResultsController(managedObjectContext, sortKeys: ["updateTime"], predicate: NSPredicate(format: "searchText CONTAINS[c] %@", searchText.lowercased()), delegate: self)
-        
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        
+        print("Content changed")
+        try! employeeList.performFetch()
     }
 }

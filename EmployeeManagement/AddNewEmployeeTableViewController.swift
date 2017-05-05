@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol DidUpdateEmployeeViewModelDelegate {
+    func didUpdateEmployee(employee: Employee)
+}
+
 class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet var employeeImageView: UIImageView!
@@ -26,13 +30,12 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
     private var model = EmployeeModel()
     private var employeeModel: EmployeeViewModel!
     var imageSelected = false
-    private var completion: ((_ model: EmployeeViewModel) -> Void)?
-    
+    private var completion: ((_ employee: Employee) -> Void)?
+    var delegate: DidUpdateEmployeeViewModelDelegate!
     // MARK: Factory Method
-    class func viewController(employeeModel: EmployeeViewModel? = nil, completion: ((_ model: EmployeeViewModel) -> Void)? = nil) -> AddNewEmployeeTableViewController {
+    class func viewController(employeeModel: EmployeeViewModel? = nil) -> AddNewEmployeeTableViewController {
         let vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateViewController(withIdentifier: "AddNewEmployeeTableViewController") as! AddNewEmployeeTableViewController
         vc.employeeModel = employeeModel
-        vc.completion = completion
         return vc
     }
     
@@ -48,6 +51,7 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
         gender.inputAccessoryView = toolBar
         if employeeModel != nil {
             //To be Edited
+            self.title = "Edit Employee"
             imageSelected = true
             pasteEmployeeData()
         }
@@ -154,7 +158,6 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
                 let existingEmployeeModel = EmployeeModel(id: employeeModel.id)
                 if existingEmployeeModel.employee != nil {
                     saveToCoreData(with: existingEmployeeModel)
-                    completion!(EmployeeViewModel(employee: existingEmployeeModel.employee))
                 }
             }
             self.navigationController?.popViewController(animated: true)
@@ -174,9 +177,9 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
         }
         return true
     }
-    
+    var employeeID: String!
     private func saveToCoreData(with model: EmployeeModel) {
-        //var searchText = [""]
+        employeeID = model.employee.id
         model.employee.name = name.text
         guard let imageData = UIImageJPEGRepresentation(employeeImageView.image!, 1) else {
             print("Error in saving image")
@@ -197,14 +200,18 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
                 }
             }
             model.employee.hobbies = hobbyComponents! as NSObject
-            var hobbies = [String]()
-            hobbyComponents?.forEach { hobbies.append($0.lowercased()) }
         }
-        var searchText = name.text!.lowercased() + " " + (selectedDate!).dateInYYYYMMDDFormat() + " " + designation.text!.lowercased() + " " + address.text!.lowercased() + " " + gender.text!.lowercased() + " " + hobbyList.text!.lowercased()
+        let searchText = name.text!.lowercased() + " " + (selectedDate!).dateInYYYYMMDDFormat() + " " + designation.text!.lowercased() + " " + address.text!.lowercased() + " " + gender.text!.lowercased() + " " + hobbyList.text!.lowercased()
         
         model.employee.searchText = searchText
         print(model.employee)
         try! model.employee.managedObjectContext?.save()
+        if employeeModel != nil {
+            let moc = ManagedObjectContext.managedObjectContext()
+            let employee = Employee.employeeWithEmployeeID(employeeID: employeeID, managedObjectContext: moc)
+            print(employee!)
+            self.delegate.didUpdateEmployee(employee: employee!)
+        }
     }
     
 }

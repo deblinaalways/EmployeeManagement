@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ViewEmployeeDetails: UITableViewController {
+class ViewEmployeeDetails: UITableViewController, DidUpdateEmployeeViewModelDelegate {
     @IBOutlet var employeeImageView: UIImageView!
     @IBOutlet var name: UILabel!
     @IBOutlet var dob: UILabel!
@@ -17,7 +17,7 @@ class ViewEmployeeDetails: UITableViewController {
     @IBOutlet var gender: UILabel!
     @IBOutlet var hobbies: UILabel!
     
-    private(set) var model: EmployeeViewModel!
+    private var model: EmployeeViewModel!
     // MARK: Factory Method
     class func viewController(viewModel: EmployeeViewModel) -> ViewEmployeeDetails {
         let vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateViewController(withIdentifier: "ViewEmployeeDetails") as! ViewEmployeeDetails
@@ -27,10 +27,10 @@ class ViewEmployeeDetails: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        syncEmployeeData()
+        syncEmployeeData(model: model)
     }
     
-    private func syncEmployeeData() {
+    private func syncEmployeeData(model: EmployeeViewModel) {
         employeeImageView.image = model.image
         name.text = model.name
         dob.text = model.dobString
@@ -47,13 +47,14 @@ class ViewEmployeeDetails: UITableViewController {
     }
     
     @IBAction func editEmployeeDetailsButtonTapped(_ sender: UIBarButtonItem) {
-        let editEmployeeProfileController = AddNewEmployeeTableViewController.viewController(employeeModel: model) { (model) in
-            DispatchQueue.main.async {
-                self.model = model
-                self.syncEmployeeData()
-            }
-        }
+        let editEmployeeProfileController = AddNewEmployeeTableViewController.viewController(employeeModel: model)
+        editEmployeeProfileController.delegate = self
         self.navigationController?.pushViewController(editEmployeeProfileController, animated: true)
+    }
+    
+    func didUpdateEmployee(employee: Employee) {
+        let newModel = EmployeeViewModel(employee: employee)
+        syncEmployeeData(model: newModel)
     }
     
 }
