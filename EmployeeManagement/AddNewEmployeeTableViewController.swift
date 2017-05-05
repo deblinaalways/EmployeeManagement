@@ -191,7 +191,7 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
         model.employee.gender = gender.text
         searchText.append(gender.text!)
         if hobbyList.text != nil {
-            let hobbyComponents = hobbyList.text?.components(separatedBy: .whitespaces)
+            var hobbyComponents = hobbyList.text?.components(separatedBy: .whitespaces)
             for (index, hobby) in (hobbyComponents?.enumerated())! {
                 if hobby.isEmpty {
                     hobbyComponents?.remove(at: index)
