@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CountryCode" representedClassName="CountryCode" syncable="YES" codeGenerationType="class">
+        <attribute name="code" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="GooglePlace" representedClassName="GooglePlace" parentEntity="Place" syncable="YES" codeGenerationType="class"/>
+    <entity name="GooglePlacesBlock" representedClassName="GooglePlacesBlock" syncable="YES" codeGenerationType="class">
+        <attribute name="fetchTime" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="geohash" attributeType="String" minValueString="7" maxValueString="7" syncable="YES"/>
+    </entity>
+    <entity name="KroudPlace" representedClassName="KroudPlace" parentEntity="Place" syncable="YES" codeGenerationType="class"/>
+    <entity name="KroudPlacesBlock" representedClassName="KroudPlacesBlock" syncable="YES" codeGenerationType="class">
+        <attribute name="fetchTime" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="geohash" attributeType="String" minValueString="5" maxValueString="5" syncable="YES"/>
+    </entity>
+    <entity name="Place" representedClassName="Place" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="addressLine1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="addressLine2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="classification" attributeType="String" syncable="YES"/>
+        <attribute name="geohash5" attributeType="String" syncable="YES"/>
+        <attribute name="geohash6" attributeType="String" syncable="YES"/>
+        <attribute name="geohash7" attributeType="String" syncable="YES"/>
+        <attribute name="googlePhotoRef" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="googlePlaceID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="orderAheadLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="placeDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="placeID" attributeType="String" syncable="YES"/>
+        <attribute name="placeName" attributeType="String" syncable="YES"/>
+        <attribute name="postalCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PlaceImage" inverseName="place" inverseEntity="PlaceImage" syncable="YES"/>
+    </entity>
+    <entity name="PlaceImage" representedClassName="PlaceImage" syncable="YES" codeGenerationType="class">
+        <attribute name="imageName" attributeType="String" syncable="YES"/>
+        <attribute name="sortOrder" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="images" inverseEntity="Place" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="countryCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emailID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="facebookID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favoritePlaces" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" customClassName="UIImage" syncable="YES"/>
+        <attribute name="loginMechanism" attributeType="String" syncable="YES"/>
+        <attribute name="oneTimePassword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recentPlaces" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="userID" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WaitTime" representedClassName="WaitTime" syncable="YES" codeGenerationType="class">
+        <attribute name="placeID" attributeType="String" syncable="YES"/>
+        <attribute name="waitTime" attributeType="Integer 32" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CountryCode" positionX="-45" positionY="135" width="128" height="75"/>
+        <element name="GooglePlace" positionX="-18" positionY="153" width="128" height="45"/>
+        <element name="GooglePlacesBlock" positionX="-9" positionY="162" width="128" height="75"/>
+        <element name="KroudPlace" positionX="-27" positionY="144" width="128" height="45"/>
+        <element name="KroudPlacesBlock" positionX="-36" positionY="135" width="128" height="75"/>
+        <element name="Place" positionX="-54" positionY="18" width="128" height="345"/>
+        <element name="PlaceImage" positionX="-54" positionY="54" width="128" height="90"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="WaitTime" positionX="-36" positionY="135" width="128" height="75"/>
+    </elements>
+</model>

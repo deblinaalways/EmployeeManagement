@@ -7,23 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		983F14A31EBD963200AE3149 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F14A21EBD963200AE3149 /* Employee.swift */; };
+		983F14A51EBD996800AE3149 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F14A41EBD996800AE3149 /* EmployeeModel.swift */; };
+		983F14A81EBF0C6400AE3149 /* ViewEmployeeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F14A71EBF0C6400AE3149 /* ViewEmployeeDetails.swift */; };
+		983F14AA1EBF40D600AE3149 /* SortOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F14A91EBF40D600AE3149 /* SortOrderTableViewController.swift */; };
+		983F14AC1EBF40D600AE3149 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983F14AB1EBF40D600AE3149 /* AlertController.swift */; };
 		985805D91EBB094D004C7AA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985805D81EBB094D004C7AA3 /* AppDelegate.swift */; };
-		985805DB1EBB094D004C7AA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985805DA1EBB094D004C7AA3 /* ViewController.swift */; };
-		985805DE1EBB094D004C7AA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985805DC1EBB094D004C7AA3 /* Main.storyboard */; };
 		985805E11EBB094D004C7AA3 /* EmployeeManagement.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 985805DF1EBB094D004C7AA3 /* EmployeeManagement.xcdatamodeld */; };
 		985805E31EBB094D004C7AA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985805E21EBB094D004C7AA3 /* Assets.xcassets */; };
 		985805E61EBB094D004C7AA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985805E41EBB094D004C7AA3 /* LaunchScreen.storyboard */; };
+		985805F31EBB09DA004C7AA3 /* Employee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985805F21EBB09DA004C7AA3 /* Employee.storyboard */; };
+		985805F51EBB09E4004C7AA3 /* EmployeeAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985805F41EBB09E4004C7AA3 /* EmployeeAssets.xcassets */; };
+		985806BD1EBB0A1C004C7AA3 /* EmployeeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985806BC1EBB0A1C004C7AA3 /* EmployeeListTableViewController.swift */; };
+		985806C01EBB0B5F004C7AA3 /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985806BF1EBB0B5F004C7AA3 /* EmployeeCell.swift */; };
+		985806C21EBB0CBE004C7AA3 /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985806C11EBB0CBE004C7AA3 /* EmployeeViewModel.swift */; };
+		985806C41EBB200C004C7AA3 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985806C31EBB200C004C7AA3 /* Date + Extension.swift */; };
+		985806CB1EBB22C2004C7AA3 /* NSManagedObject + Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985806CA1EBB22C2004C7AA3 /* NSManagedObject + Library.swift */; };
+		985806CD1EBB2318004C7AA3 /* NSManagedObjectContext + Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985806CC1EBB2318004C7AA3 /* NSManagedObjectContext + Library.swift */; };
+		985806D31EBB272A004C7AA3 /* AddNewEmployeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985806D21EBB272A004C7AA3 /* AddNewEmployeeTableViewController.swift */; };
+		985806D51EBB2D0E004C7AA3 /* HobbiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985806D41EBB2D0E004C7AA3 /* HobbiesTableViewController.swift */; };
+		985806D71EBB456B004C7AA3 /* EmployeeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985806D61EBB456B004C7AA3 /* EmployeeListModel.swift */; };
+		985806D91EBC4859004C7AA3 /* AddNewEmployee + ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985806D81EBC4859004C7AA3 /* AddNewEmployee + ImagePicker.swift */; };
+		98ACE0FB1EBCB3F9008AABE6 /* UIWindow + VisibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ACE0FA1EBCB3F9008AABE6 /* UIWindow + VisibleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		983F14A21EBD963200AE3149 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		983F14A41EBD996800AE3149 /* EmployeeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
+		983F14A71EBF0C6400AE3149 /* ViewEmployeeDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEmployeeDetails.swift; sourceTree = "<group>"; };
+		983F14A91EBF40D600AE3149 /* SortOrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortOrderTableViewController.swift; sourceTree = "<group>"; };
+		983F14AB1EBF40D600AE3149 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		985805D51EBB094D004C7AA3 /* EmployeeManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		985805D81EBB094D004C7AA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		985805DA1EBB094D004C7AA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		985805DD1EBB094D004C7AA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		985805E01EBB094D004C7AA3 /* EmployeeManagement.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmployeeManagement.xcdatamodel; sourceTree = "<group>"; };
 		985805E21EBB094D004C7AA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		985805E51EBB094D004C7AA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		985805E71EBB094D004C7AA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		985805F21EBB09DA004C7AA3 /* Employee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Employee.storyboard; sourceTree = "<group>"; };
+		985805F41EBB09E4004C7AA3 /* EmployeeAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = EmployeeAssets.xcassets; sourceTree = "<group>"; };
+		985806BC1EBB0A1C004C7AA3 /* EmployeeListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeListTableViewController.swift; sourceTree = "<group>"; };
+		985806BF1EBB0B5F004C7AA3 /* EmployeeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
+		985806C11EBB0CBE004C7AA3 /* EmployeeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
+		985806C31EBB200C004C7AA3 /* Date + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		985806CA1EBB22C2004C7AA3 /* NSManagedObject + Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject + Library.swift"; sourceTree = "<group>"; };
+		985806CC1EBB2318004C7AA3 /* NSManagedObjectContext + Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext + Library.swift"; sourceTree = "<group>"; };
+		985806D21EBB272A004C7AA3 /* AddNewEmployeeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewEmployeeTableViewController.swift; sourceTree = "<group>"; };
+		985806D41EBB2D0E004C7AA3 /* HobbiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobbiesTableViewController.swift; sourceTree = "<group>"; };
+		985806D61EBB456B004C7AA3 /* EmployeeListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeListModel.swift; sourceTree = "<group>"; };
+		985806D81EBC4859004C7AA3 /* AddNewEmployee + ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddNewEmployee + ImagePicker.swift"; sourceTree = "<group>"; };
+		98ACE0FA1EBCB3F9008AABE6 /* UIWindow + VisibleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow + VisibleViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +69,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		983F14A11EBD91DA00AE3149 /* Employee View Model */ = {
+			isa = PBXGroup;
+			children = (
+				985806D61EBB456B004C7AA3 /* EmployeeListModel.swift */,
+				985806C11EBB0CBE004C7AA3 /* EmployeeViewModel.swift */,
+				983F14A41EBD996800AE3149 /* EmployeeModel.swift */,
+			);
+			name = "Employee View Model";
+			sourceTree = "<group>";
+		};
+		983F14A61EBF0C4F00AE3149 /* View Employee Details */ = {
+			isa = PBXGroup;
+			children = (
+				983F14A71EBF0C6400AE3149 /* ViewEmployeeDetails.swift */,
+			);
+			name = "View Employee Details";
+			sourceTree = "<group>";
+		};
 		985805CC1EBB094D004C7AA3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +106,93 @@
 		985805D71EBB094D004C7AA3 /* EmployeeManagement */ = {
 			isa = PBXGroup;
 			children = (
-				985805D81EBB094D004C7AA3 /* AppDelegate.swift */,
-				985805DA1EBB094D004C7AA3 /* ViewController.swift */,
-				985805DC1EBB094D004C7AA3 /* Main.storyboard */,
-				985805E21EBB094D004C7AA3 /* Assets.xcassets */,
-				985805E41EBB094D004C7AA3 /* LaunchScreen.storyboard */,
-				985805E71EBB094D004C7AA3 /* Info.plist */,
-				985805DF1EBB094D004C7AA3 /* EmployeeManagement.xcdatamodeld */,
+				985805ED1EBB0961004C7AA3 /* Application Delegate */,
+				985805F11EBB09C6004C7AA3 /* StoryBoards */,
+				985805F01EBB099E004C7AA3 /* Controllers */,
+				985805EF1EBB098B004C7AA3 /* Data Model */,
+				985805EE1EBB0976004C7AA3 /* Supporting Files */,
 			);
 			path = EmployeeManagement;
+			sourceTree = "<group>";
+		};
+		985805ED1EBB0961004C7AA3 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				985805E41EBB094D004C7AA3 /* LaunchScreen.storyboard */,
+				985805D81EBB094D004C7AA3 /* AppDelegate.swift */,
+			);
+			name = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		985805EE1EBB0976004C7AA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				985806C91EBB2262004C7AA3 /* Library */,
+				985805F41EBB09E4004C7AA3 /* EmployeeAssets.xcassets */,
+				985805E21EBB094D004C7AA3 /* Assets.xcassets */,
+				985805E71EBB094D004C7AA3 /* Info.plist */,
+				985806C31EBB200C004C7AA3 /* Date + Extension.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		985805EF1EBB098B004C7AA3 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				985805DF1EBB094D004C7AA3 /* EmployeeManagement.xcdatamodeld */,
+				983F14A21EBD963200AE3149 /* Employee.swift */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		985805F01EBB099E004C7AA3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				983F14A61EBF0C4F00AE3149 /* View Employee Details */,
+				983F14A11EBD91DA00AE3149 /* Employee View Model */,
+				985806BE1EBB0B3E004C7AA3 /* Employee List Table */,
+				985806D11EBB26F9004C7AA3 /* New Employee Record */,
+				983F14A91EBF40D600AE3149 /* SortOrderTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		985805F11EBB09C6004C7AA3 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				985805F21EBB09DA004C7AA3 /* Employee.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		985806BE1EBB0B3E004C7AA3 /* Employee List Table */ = {
+			isa = PBXGroup;
+			children = (
+				985806BC1EBB0A1C004C7AA3 /* EmployeeListTableViewController.swift */,
+				985806BF1EBB0B5F004C7AA3 /* EmployeeCell.swift */,
+			);
+			name = "Employee List Table";
+			sourceTree = "<group>";
+		};
+		985806C91EBB2262004C7AA3 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				985806CA1EBB22C2004C7AA3 /* NSManagedObject + Library.swift */,
+				985806CC1EBB2318004C7AA3 /* NSManagedObjectContext + Library.swift */,
+				983F14AB1EBF40D600AE3149 /* AlertController.swift */,
+				98ACE0FA1EBCB3F9008AABE6 /* UIWindow + VisibleViewController.swift */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		985806D11EBB26F9004C7AA3 /* New Employee Record */ = {
+			isa = PBXGroup;
+			children = (
+				985806D21EBB272A004C7AA3 /* AddNewEmployeeTableViewController.swift */,
+				985806D41EBB2D0E004C7AA3 /* HobbiesTableViewController.swift */,
+				985806D81EBC4859004C7AA3 /* AddNewEmployee + ImagePicker.swift */,
+			);
+			name = "New Employee Record";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +257,8 @@
 			files = (
 				985805E61EBB094D004C7AA3 /* LaunchScreen.storyboard in Resources */,
 				985805E31EBB094D004C7AA3 /* Assets.xcassets in Resources */,
-				985805DE1EBB094D004C7AA3 /* Main.storyboard in Resources */,
+				985805F51EBB09E4004C7AA3 /* EmployeeAssets.xcassets in Resources */,
+				985805F31EBB09DA004C7AA3 /* Employee.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,23 +269,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				985805DB1EBB094D004C7AA3 /* ViewController.swift in Sources */,
 				985805D91EBB094D004C7AA3 /* AppDelegate.swift in Sources */,
+				985806CD1EBB2318004C7AA3 /* NSManagedObjectContext + Library.swift in Sources */,
+				985806D91EBC4859004C7AA3 /* AddNewEmployee + ImagePicker.swift in Sources */,
+				983F14A51EBD996800AE3149 /* EmployeeModel.swift in Sources */,
+				983F14A31EBD963200AE3149 /* Employee.swift in Sources */,
+				983F14A81EBF0C6400AE3149 /* ViewEmployeeDetails.swift in Sources */,
+				985806C01EBB0B5F004C7AA3 /* EmployeeCell.swift in Sources */,
+				98ACE0FB1EBCB3F9008AABE6 /* UIWindow + VisibleViewController.swift in Sources */,
+				985806D71EBB456B004C7AA3 /* EmployeeListModel.swift in Sources */,
+				983F14AC1EBF40D600AE3149 /* AlertController.swift in Sources */,
+				983F14AA1EBF40D600AE3149 /* SortOrderTableViewController.swift in Sources */,
+				985806CB1EBB22C2004C7AA3 /* NSManagedObject + Library.swift in Sources */,
+				985806D51EBB2D0E004C7AA3 /* HobbiesTableViewController.swift in Sources */,
 				985805E11EBB094D004C7AA3 /* EmployeeManagement.xcdatamodeld in Sources */,
+				985806C21EBB0CBE004C7AA3 /* EmployeeViewModel.swift in Sources */,
+				985806BD1EBB0A1C004C7AA3 /* EmployeeListTableViewController.swift in Sources */,
+				985806D31EBB272A004C7AA3 /* AddNewEmployeeTableViewController.swift in Sources */,
+				985806C41EBB200C004C7AA3 /* Date + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		985805DC1EBB094D004C7AA3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				985805DD1EBB094D004C7AA3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		985805E41EBB094D004C7AA3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -306,6 +442,7 @@
 				985805EC1EBB094D004C7AA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
