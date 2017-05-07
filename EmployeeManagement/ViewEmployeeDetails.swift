@@ -49,7 +49,7 @@ class ViewEmployeeDetails: UITableViewController, DidUpdateEmployeeViewModelDele
     }
     
     @IBAction func editEmployeeDetailsButtonTapped(_ sender: UIBarButtonItem) {
-        let editEmployeeProfileController = AddNewEmployeeTableViewController.viewController(employeeModel: model, moc: moc)i
+        let editEmployeeProfileController = AddNewEmployeeTableViewController.viewController(employeeModel: model, moc: moc)
         editEmployeeProfileController.delegate = self
         self.navigationController?.pushViewController(editEmployeeProfileController, animated: true)
     }
