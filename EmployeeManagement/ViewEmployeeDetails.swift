@@ -18,10 +18,12 @@ class ViewEmployeeDetails: UITableViewController, DidUpdateEmployeeViewModelDele
     @IBOutlet var hobbies: UILabel!
     
     private var model: EmployeeViewModel!
+    private var moc: ManagedObjectContext!
     // MARK: Factory Method
-    class func viewController(viewModel: EmployeeViewModel) -> ViewEmployeeDetails {
+    class func viewController(viewModel: EmployeeViewModel, moc: ManagedObjectContext) -> ViewEmployeeDetails {
         let vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateViewController(withIdentifier: "ViewEmployeeDetails") as! ViewEmployeeDetails
         vc.model = viewModel
+        vc.moc = moc
         return vc
     }
     
@@ -47,7 +49,7 @@ class ViewEmployeeDetails: UITableViewController, DidUpdateEmployeeViewModelDele
     }
     
     @IBAction func editEmployeeDetailsButtonTapped(_ sender: UIBarButtonItem) {
-        let editEmployeeProfileController = AddNewEmployeeTableViewController.viewController(employeeModel: model)
+        let editEmployeeProfileController = AddNewEmployeeTableViewController.viewController(employeeModel: model, moc: moc)i
         editEmployeeProfileController.delegate = self
         self.navigationController?.pushViewController(editEmployeeProfileController, animated: true)
     }

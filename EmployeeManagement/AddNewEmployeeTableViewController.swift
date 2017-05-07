@@ -30,12 +30,14 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
     private var model = EmployeeModel()
     private var employeeModel: EmployeeViewModel!
     var imageSelected = false
-    private var completion: ((_ employee: Employee) -> Void)?
     var delegate: DidUpdateEmployeeViewModelDelegate!
+    private var moc: ManagedObjectContext!
+    
     // MARK: Factory Method
-    class func viewController(employeeModel: EmployeeViewModel? = nil) -> AddNewEmployeeTableViewController {
+    class func viewController(employeeModel: EmployeeViewModel? = nil, moc: ManagedObjectContext? = nil) -> AddNewEmployeeTableViewController {
         let vc = UIStoryboard.init(name: "Employee", bundle: nil).instantiateViewController(withIdentifier: "AddNewEmployeeTableViewController") as! AddNewEmployeeTableViewController
         vc.employeeModel = employeeModel
+        vc.moc = moc
         return vc
     }
     
@@ -155,7 +157,7 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
                 saveToCoreData(with: model)
             } else {
                 //Edited
-                let existingEmployeeModel = EmployeeModel(id: employeeModel.id)
+                let existingEmployeeModel = EmployeeModel(id: employeeModel.id, moc: moc)
                 if existingEmployeeModel.employee != nil {
                     saveToCoreData(with: existingEmployeeModel)
                 }
@@ -177,7 +179,7 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
         }
         return true
     }
-    var employeeID: String!
+    private var employeeID: String!
     private func saveToCoreData(with model: EmployeeModel) {
         employeeID = model.employee.id
         model.employee.name = name.text

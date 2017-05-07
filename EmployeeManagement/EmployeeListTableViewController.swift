@@ -74,8 +74,9 @@ extension EmployeeListTableViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.model.employeeList.delegate = nil
         let employee = (model.employeeList.fetchedObjects as! [Employee])[indexPath.row]
-        self.navigationController?.pushViewController(ViewEmployeeDetails.viewController(viewModel: EmployeeViewModel(employee: employee)), animated: true)
+        self.navigationController?.pushViewController(ViewEmployeeDetails.viewController(viewModel: EmployeeViewModel(employee: employee), moc: model.managedObjectContext), animated: true)
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

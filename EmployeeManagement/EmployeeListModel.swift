@@ -31,6 +31,7 @@ class EmployeeListModel: NSObject, NSFetchedResultsControllerDelegate {
         case .Name: employeeList = Employee.fetchedResultsController(managedObjectContext, sortKeys: ["name"])
         default: employeeList = Employee.fetchedResultsController(managedObjectContext, sortKeys: ["updateTime"])
         }
+        employeeList.delegate = self
     }
     
     func todaysRecordCount() -> Int {
@@ -48,11 +49,10 @@ class EmployeeListModel: NSObject, NSFetchedResultsControllerDelegate {
     }
     
     func fetchEmployees(By searchText: String) {
-        employeeList = Employee.fetchedResultsController(managedObjectContext, sortKeys: ["updateTime"], predicate: NSPredicate(format: "searchText CONTAINS[c] %@", searchText.lowercased()), delegate: self)
+        employeeList = Employee.fetchedResultsController(managedObjectContext, sortKeys: ["updateTime"], predicate: NSPredicate(format: "searchText CONTAINS[c] %@", searchText.lowercased()))
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         print("Content changed")
-        try! employeeList.performFetch()
     }
 }
