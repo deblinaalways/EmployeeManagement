@@ -74,7 +74,6 @@
 			children = (
 				985806D61EBB456B004C7AA3 /* EmployeeListModel.swift */,
 				985806C11EBB0CBE004C7AA3 /* EmployeeViewModel.swift */,
-				983F14A41EBD996800AE3149 /* EmployeeModel.swift */,
 			);
 			name = "Employee View Model";
 			sourceTree = "<group>";
@@ -109,6 +108,7 @@
 				985805ED1EBB0961004C7AA3 /* Application Delegate */,
 				985805F11EBB09C6004C7AA3 /* StoryBoards */,
 				985805F01EBB099E004C7AA3 /* Controllers */,
+				988729AC1EBFC5D8003B84C5 /* Employee SortOrder Table */,
 				985805EF1EBB098B004C7AA3 /* Data Model */,
 				985805EE1EBB0976004C7AA3 /* Supporting Files */,
 			);
@@ -131,7 +131,6 @@
 				985805F41EBB09E4004C7AA3 /* EmployeeAssets.xcassets */,
 				985805E21EBB094D004C7AA3 /* Assets.xcassets */,
 				985805E71EBB094D004C7AA3 /* Info.plist */,
-				985806C31EBB200C004C7AA3 /* Date + Extension.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -148,11 +147,11 @@
 		985805F01EBB099E004C7AA3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				988729AB1EBFC5B1003B84C5 /* Employee Model */,
 				983F14A61EBF0C4F00AE3149 /* View Employee Details */,
 				983F14A11EBD91DA00AE3149 /* Employee View Model */,
 				985806BE1EBB0B3E004C7AA3 /* Employee List Table */,
 				985806D11EBB26F9004C7AA3 /* New Employee Record */,
-				983F14A91EBF40D600AE3149 /* SortOrderTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +176,7 @@
 		985806C91EBB2262004C7AA3 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				985806C31EBB200C004C7AA3 /* Date + Extension.swift */,
 				985806CA1EBB22C2004C7AA3 /* NSManagedObject + Library.swift */,
 				985806CC1EBB2318004C7AA3 /* NSManagedObjectContext + Library.swift */,
 				983F14AB1EBF40D600AE3149 /* AlertController.swift */,
@@ -193,6 +193,22 @@
 				985806D81EBC4859004C7AA3 /* AddNewEmployee + ImagePicker.swift */,
 			);
 			name = "New Employee Record";
+			sourceTree = "<group>";
+		};
+		988729AB1EBFC5B1003B84C5 /* Employee Model */ = {
+			isa = PBXGroup;
+			children = (
+				983F14A41EBD996800AE3149 /* EmployeeModel.swift */,
+			);
+			name = "Employee Model";
+			sourceTree = "<group>";
+		};
+		988729AC1EBFC5D8003B84C5 /* Employee SortOrder Table */ = {
+			isa = PBXGroup;
+			children = (
+				983F14A91EBF40D600AE3149 /* SortOrderTableViewController.swift */,
+			);
+			name = "Employee SortOrder Table";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -27,12 +27,20 @@
                                 <color key="textColor" red="0.1764705882" green="0.57254901960000004" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by: Deblina Das" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngp-Yh-QwI">
+                                <rect key="frame" x="196.5" y="631" width="162.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="b0l-q7-qPF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4d4-pg-VL8"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ngp-Yh-QwI" secondAttribute="bottom" constant="20" id="CAh-2C-rAe"/>
                             <constraint firstItem="b0l-q7-qPF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PYh-6v-3Tc"/>
                             <constraint firstItem="b0l-q7-qPF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="Q2V-1O-PBQ"/>
+                            <constraint firstAttribute="trailing" secondItem="ngp-Yh-QwI" secondAttribute="trailing" constant="16" id="mNQ-HC-bRO"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b0l-q7-qPF" secondAttribute="trailing" constant="16" id="uyf-hq-Kv6"/>
                         </constraints>
                     </view>
