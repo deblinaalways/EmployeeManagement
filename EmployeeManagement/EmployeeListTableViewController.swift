@@ -54,6 +54,11 @@ class EmployeeListTableViewController: UIViewController {
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
     }
+
+    @IBAction func viewTapped(_ sender: UITapGestureRecognizer) {
+        searchBar.resignFirstResponder()
+    }
+    
 }
 
 extension EmployeeListTableViewController: UITableViewDelegate, UITableViewDataSource {
@@ -75,6 +80,7 @@ extension EmployeeListTableViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.model.employeeList.delegate = nil
+        searchBar.resignFirstResponder()
         let employee = (model.employeeList.fetchedObjects as! [Employee])[indexPath.row]
         self.navigationController?.pushViewController(ViewEmployeeDetails.viewController(viewModel: EmployeeViewModel(employee: employee), moc: model.managedObjectContext), animated: true)
     }

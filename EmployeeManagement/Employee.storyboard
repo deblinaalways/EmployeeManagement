@@ -80,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="1492" y="-629"/>
         </scene>
-        <!--Employee Details-->
+        <!--Employee List-->
         <scene sceneID="mcW-gG-2RF">
             <objects>
                 <viewController storyboardIdentifier="EmployeeListTableViewController" id="idQ-XL-lP2" customClass="EmployeeListTableViewController" customModule="EmployeeManagement" customModuleProvider="target" sceneMemberID="viewController">
@@ -278,8 +278,11 @@
                             <constraint firstItem="0iP-rQ-Hbf" firstAttribute="top" secondItem="1hv-Ba-vPK" secondAttribute="bottom" id="rOb-SA-d4b"/>
                             <constraint firstAttribute="trailing" secondItem="Wo7-yW-s4r" secondAttribute="trailing" id="v5W-Gs-gvD"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eIl-BK-nne" appends="YES" id="kiW-B7-J1B"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Employee Details" id="H8t-R9-W2g">
+                    <navigationItem key="navigationItem" title="Employee List" id="H8t-R9-W2g">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EeR-eL-mgc">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -295,6 +298,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90A-iA-hKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="eIl-BK-nne">
+                    <connections>
+                        <action selector="viewTapped:" destination="idQ-XL-lP2" id="X2e-ec-fBx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="797.60000000000002" y="188.45577211394306"/>
         </scene>
@@ -741,6 +749,7 @@
                         <connections>
                             <outlet property="dataSource" destination="ue1-wf-63d" id="jjB-R6-Yhe"/>
                             <outlet property="delegate" destination="ue1-wf-63d" id="82o-eF-mDX"/>
+                            <outletCollection property="gestureRecognizers" destination="NRf-Bv-Z22" appends="YES" id="9iV-wh-d2l"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add New Employe" id="ogq-9f-SwX">
@@ -810,13 +819,11 @@
                     <connections>
                         <outlet property="dataSource" destination="qdf-7v-DYa" id="ttR-sR-vYV"/>
                         <outlet property="delegate" destination="qdf-7v-DYa" id="Zoh-4K-Mt3"/>
-                        <outletCollection property="gestureRecognizers" destination="NRf-Bv-Z22" appends="YES" id="LIL-Hl-qh8"/>
                     </connections>
                 </pickerView>
                 <tapGestureRecognizer id="NRf-Bv-Z22">
                     <connections>
                         <action selector="viewTapped:" destination="ue1-wf-63d" id="aZk-vU-umB"/>
-                        <outlet property="delegate" destination="qdf-7v-DYa" id="jiW-JR-ZNQ"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
