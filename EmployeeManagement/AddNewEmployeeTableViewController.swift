@@ -13,7 +13,7 @@ protocol DidUpdateEmployeeViewModelDelegate {
     func didUpdateEmployee(employee: Employee)
 }
 
-class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet var employeeImageView: UIImageView!
     @IBOutlet var name: UITextField!
@@ -44,6 +44,9 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.estimatedRowHeight = 89
+        name.delegate = self
+        designation.delegate = self
+        address.delegate = self
         genderPicker.delegate = self
         genderPicker.dataSource = self
         selectedDate = datePicker.date
@@ -73,6 +76,11 @@ class AddNewEmployeeTableViewController: UITableViewController, DidUpdateHobiesD
             }
             hobbyList.text = text
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
